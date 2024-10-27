@@ -34,6 +34,14 @@ const LoginScreen = () => {
     setIsPassVisible((prev) => !prev);
   };
 
+  const onLogin = () => {
+    Alert.alert("Credentials", `${email} + ${password}`);
+  };
+
+  const onSignUp = () => {
+    console.log("Sign up!");
+  };
+
   const showButton = (
     <TouchableOpacity onPress={showPassVisible}>
       <Text style={[styles.baseText, styles.showButton]}>Show</Text>
@@ -71,7 +79,10 @@ const LoginScreen = () => {
             </View>
             <View style={styles.btnWrapper}>
               <Button buttonStyle={styles.loginBtn}>
-                <Text style={[styles.baseText, styles.loginButtonText]}>
+                <Text
+                  style={[styles.baseText, styles.loginButtonText]}
+                  onPress={onLogin}
+                >
                   Login
                 </Text>
               </Button>
@@ -79,7 +90,9 @@ const LoginScreen = () => {
                 <Text style={[styles.baseText, styles.noAccText]}>
                   No account?{" "}
                   <TouchableWithoutFeedback>
-                    <Text style={styles.signUpText}>Register</Text>
+                    <Text style={styles.signUpText} onPress={onSignUp}>
+                      Register
+                    </Text>
                   </TouchableWithoutFeedback>
                 </Text>
               </View>
