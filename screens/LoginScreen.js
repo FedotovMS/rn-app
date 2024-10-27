@@ -9,6 +9,7 @@ import {
   Platform,
   TouchableWithoutFeedback,
   Keyboard,
+  Alert,
 } from "react-native";
 import { colors } from "../styles/global";
 import Input from "../shared/Input";
@@ -56,7 +57,7 @@ const LoginScreen = () => {
     >
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "heightg"}
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
           style={styles.container}
         >
           <View style={styles.formWrapper}>
@@ -78,21 +79,16 @@ const LoginScreen = () => {
               />
             </View>
             <View style={styles.btnWrapper}>
-              <Button buttonStyle={styles.loginBtn}>
-                <Text
-                  style={[styles.baseText, styles.loginButtonText]}
-                  onPress={onLogin}
-                >
+              <Button buttonStyle={styles.loginBtn} onPress={onLogin}>
+                <Text style={[styles.baseText, styles.loginButtonText]}>
                   Login
                 </Text>
               </Button>
               <View style={styles.signupWrapper}>
                 <Text style={[styles.baseText, styles.noAccText]}>
                   No account?{" "}
-                  <TouchableWithoutFeedback>
-                    <Text style={styles.signUpText} onPress={onSignUp}>
-                      Register
-                    </Text>
+                  <TouchableWithoutFeedback onPress={onSignUp}>
+                    <Text style={styles.signUpText}>Register</Text>
                   </TouchableWithoutFeedback>
                 </Text>
               </View>
