@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import { useEffect } from "react";
 
 import LoginScreen from "./screens/LoginScreen";
+import RegistrationScreen from "./screens/RegistrationScreen";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -23,8 +24,8 @@ export default function App() {
   if (!fontsLoaded) {
     return <ActivityIndicator size="large" />;
   }
-
-  return <LoginScreen />;
+  // return <LoginScreen />;
+  return <RegistrationScreen />;
 }
 
 const styles = StyleSheet.create({

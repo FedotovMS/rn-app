@@ -1,7 +1,6 @@
 import {
   StyleSheet,
   View,
-  ImageBackground,
   Dimensions,
   Text,
   TouchableOpacity,
@@ -11,10 +10,12 @@ import {
   Keyboard,
   Alert,
 } from "react-native";
+import { useState } from "react";
+
 import { colors } from "../styles/global";
 import Input from "../shared/Input";
-import { useState } from "react";
 import Button from "../shared/Button";
+import BackgroundImageWrapper from "../shared/BackgroundWrapper";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("screen");
 
@@ -31,7 +32,7 @@ const LoginScreen = () => {
     setPassword(value);
   };
 
-  const showPassVisible = () => {
+  const showPassword = () => {
     setIsPassVisible((prev) => !prev);
   };
 
@@ -44,17 +45,13 @@ const LoginScreen = () => {
   };
 
   const showButton = (
-    <TouchableOpacity onPress={showPassVisible}>
+    <TouchableOpacity onPress={showPassword}>
       <Text style={[styles.baseText, styles.showButton]}>Show</Text>
     </TouchableOpacity>
   );
 
   return (
-    <ImageBackground
-      source={require("../assets/images/backgroundImg.png")}
-      resizeMode="cover"
-      style={styles.backgroundImg}
-    >
+    <BackgroundImageWrapper>
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -98,7 +95,7 @@ const LoginScreen = () => {
           </View>
         </KeyboardAvoidingView>
       </TouchableWithoutFeedback>
-    </ImageBackground>
+    </BackgroundImageWrapper>
   );
 };
 
@@ -107,15 +104,6 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "flex-end",
-  },
-  backgroundImg: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    height: "100%",
-    width: "100%",
     alignItems: "center",
     justifyContent: "flex-end",
   },
