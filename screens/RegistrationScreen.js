@@ -146,6 +146,7 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     lineHeight: 36,
     textAlign: "center",
+    marginBottom: 32,
   },
 
   innerContainer: {
@@ -169,6 +170,7 @@ const styles = StyleSheet.create({
   },
   showButton: {
     color: colors.blue,
+    marginBottom: 45,
   },
   passwordButton: {
     flexDirection: "row",
