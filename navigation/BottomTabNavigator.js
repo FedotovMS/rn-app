@@ -34,7 +34,7 @@ const BottomTabNavigator = () => {
             <Ionicons
               name="grid-outline"
               size={24}
-              color={focused ? `${colors.orange}` : `${colors.black_primary}`}
+              color={focused ? `${colors.orange}` : `${colors.black_Main}`}
             />
           ),
         })}
@@ -59,7 +59,7 @@ const BottomTabNavigator = () => {
             <Ionicons
               name="person-outline"
               size={24}
-              color={focused ? `${colors.orange}` : `${colors.black_primary}`}
+              color={focused ? `${colors.orange}` : `${colors.black_Main}`}
             />
           ),
         })}
