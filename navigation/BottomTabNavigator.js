@@ -41,7 +41,7 @@ const BottomTabNavigator = () => {
         })}
       />
       <Tabs.Screen
-        name="Create Post"
+        name="CreatePost"
         component={CreatePostScreen}
         options={({ navigation }) => ({
           title: "Create post",
