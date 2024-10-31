@@ -19,7 +19,7 @@ import BackgroundImageWrapper from "../shared/BackgroundWrapper";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("screen");
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPassVisible, setIsPassVisible] = useState(false);
@@ -37,11 +37,11 @@ const LoginScreen = () => {
   };
 
   const onLogin = () => {
-    Alert.alert("Credentials", `${email} + ${password}`);
+    navigation.navigate("Posts");
   };
 
   const onSignUp = () => {
-    console.log("Sign up!");
+    navigation.navigate("Register");
   };
 
   const showButton = (

@@ -1,10 +1,13 @@
+import "react-native-gesture-handler";
+import React from "react";
 import { StyleSheet, ActivityIndicator } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 
-import LoginScreen from "./screens/LoginScreen";
-import RegistrationScreen from "./screens/RegistrationScreen";
+import { NavigationContainer } from "@react-navigation/native";
+// import BottomTabNavigator from "./navigation/BottomTabNavigator";
+import StackNavigator from "./navigation/StackNavigator";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -24,10 +27,10 @@ export default function App() {
   if (!fontsLoaded) {
     return <ActivityIndicator size="large" />;
   }
-  // return <LoginScreen />;
-  return <RegistrationScreen />;
-}
 
-const styles = StyleSheet.create({
-  container: {},
-});
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
+}

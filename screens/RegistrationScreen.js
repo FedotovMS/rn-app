@@ -16,11 +16,11 @@ import { colors } from "../styles/global";
 import BackgroundImageWrapper from "../shared/BackgroundWrapper";
 import Input from "../shared/Input";
 import Button from "../shared/Button";
-import IconAdd from "../styles/icons/IconAdd";
+import IconAdd from "../icons/IconAdd";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("screen");
 
-const RegistrationScreen = () => {
+const RegistrationScreen = ({ navigation }) => {
   const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
