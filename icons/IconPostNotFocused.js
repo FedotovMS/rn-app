@@ -1,7 +1,6 @@
 import * as React from "react";
 import Svg, { G, Rect, Path, Defs, ClipPath } from "react-native-svg";
-
-const IconPostFocused = (props) => (
+const IconNotFocused = (props) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
     width={70}
@@ -10,7 +9,15 @@ const IconPostFocused = (props) => (
     {...props}
   >
     <G clipPath="url(#a)">
-      <Rect width={70} height={40} fill="#F6F6F6" rx={20} />
+      <Rect
+        width={69}
+        height={39}
+        x={0.5}
+        y={0.5}
+        fill="#F6F6F6"
+        stroke="#212121"
+        rx={19.5}
+      />
       <Path
         fill="#212121"
         fillRule="evenodd"
@@ -25,5 +32,4 @@ const IconPostFocused = (props) => (
     </Defs>
   </Svg>
 );
-
-export default IconPostNotFocused;
+export default IconNotFocused;
