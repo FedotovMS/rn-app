@@ -6,8 +6,7 @@ import CreatePostScreen from "../screens/CreatePostsScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import { colors } from "../styles/global";
 import LogoutButton from "../shared/LogoutButton";
-import { StyleSheet, View } from "react-native";
-import IconPost from "../icons/IconPostFocesd";
+
 import IconPostFocused from "../icons/IconPostFocesd";
 import IconPostNotFocused from "../icons/IconPostNotFocused";
 
