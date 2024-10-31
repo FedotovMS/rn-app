@@ -6,6 +6,10 @@ import CreatePostScreen from "../screens/CreatePostsScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import { colors } from "../styles/global";
 import LogoutButton from "../shared/LogoutButton";
+import { StyleSheet, View } from "react-native";
+import IconPost from "../icons/IconPostFocesd";
+import IconPostFocused from "../icons/IconPostFocesd";
+import IconPostNotFocused from "../icons/IconPostNotFocused";
 
 const Tabs = createBottomTabNavigator();
 
@@ -42,13 +46,8 @@ const BottomTabNavigator = () => {
         options={({ navigation }) => ({
           title: "Create post",
           tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name="add-circle-sharp"
-              size={32}
-              color={focused ? `${colors.orange}` : `${colors.black_primary}`}
-            />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? <IconPostFocused /> : <IconPostNotFocused />,
         })}
       />
       <Tabs.Screen
