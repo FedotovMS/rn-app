@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet } from "react-native";
 import { colors } from "../styles/global";
+import Post from "../shared/Post";
 
 const PostsScreen = () => {
   return (
@@ -10,6 +11,9 @@ const PostsScreen = () => {
           <Text style={styles.textName}>Natali Romanova</Text>
           <Text style={styles.emailText}>email@example.com</Text>
         </View>
+      </View>
+      <View style={styles.postList}>
+        <Post />
       </View>
     </View>
   );
@@ -46,4 +50,5 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     color: colors.black80,
   },
+  postList: {},
 });
