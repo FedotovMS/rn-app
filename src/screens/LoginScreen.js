@@ -17,6 +17,7 @@ import Input from "../../src/shared/Input";
 import Button from "../../src/shared/Button";
 import BackgroundImageWrapper from "../../src/shared/BackgroundWrapper";
 import { useDispatch } from "react-redux";
+import { loginDB } from "../redux/reducers/operations";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("screen");
 
@@ -55,6 +56,7 @@ const LoginScreen = ({ navigation }) => {
   const onSignUp = () => {
     navigation.navigate("Register");
   };
+
   useEffect(() => {
     if (login && email && password) {
       console.log(login, email, password);
