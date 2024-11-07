@@ -54,7 +54,13 @@ const RegistrationScreen = ({ navigation }) => {
 
   const onSignUp = () => {
     if (login && email && password) {
-      dispatch(registerDB(login, email, password));
+      dispatch(
+        registerDB({
+          inputEmail: email,
+          inputPassword: password,
+          inputLogin: login,
+        })
+      );
     }
     reset();
   };

@@ -13,6 +13,7 @@ const firebaseConfig = {
   authDomain: "rn-app-340e9.firebaseapp.com",
   projectId: "rn-app-340e9",
   storageBucket: "gs://rn-app-340e9.firebasestorage.app",
+  databaseURL: "<https://project-id.firebaseio.com>",
 };
 
 const app = initializeApp(firebaseConfig);
