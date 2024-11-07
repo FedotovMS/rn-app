@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet } from "react-native";
-import { colors } from "../styles/global";
+import { colors } from "../../styles/global";
 import Post from "../shared/Post";
 
 const PostsScreen = () => {

@@ -12,15 +12,19 @@ import {
 } from "react-native";
 import { useState } from "react";
 
-import { colors } from "../styles/global";
-import BackgroundImageWrapper from "../shared/BackgroundWrapper";
-import Input from "../shared/Input";
-import Button from "../shared/Button";
-import IconAdd from "../icons/IconAdd";
+import { colors } from "../../styles/global";
+import BackgroundImageWrapper from "../../src/shared/BackgroundWrapper";
+import Input from "../../src/shared/Input";
+import Button from "../../src/shared/Button";
+import IconAdd from "../../icons/IconAdd";
+import { registerDB } from "../redux/reducers/operations";
+import { useDispatch } from "react-redux";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("screen");
 
 const RegistrationScreen = ({ navigation }) => {
+  const dispatch = useDispatch();
+
   const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -49,7 +53,16 @@ const RegistrationScreen = ({ navigation }) => {
   };
 
   const onSignUp = () => {
-    navigation.navigate("Posts");
+    if (login && email && password) {
+      dispatch(registerDB(login, email, password));
+    }
+    reset();
+  };
+
+  const reset = () => {
+    setLogin("");
+    setEmail("");
+    setPassword("");
   };
 
   const showButton = (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
-import { colors } from "../styles/global";
-import IconCamera from "../icons/IconCamera";
+import { colors } from "../../styles/global";
+import IconCamera from "../../icons/IconCamera";
 import Input from "../shared/Input";
 import Button from "../shared/Button";
 import { useNavigation } from "@react-navigation/native";

@@ -1,14 +1,14 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
-import PostsScreen from "../screens/PostsScreen";
-import CreatePostScreen from "../screens/CreatePostsScreen";
-import ProfileScreen from "../screens/ProfileScreen";
-import { colors } from "../styles/global";
-import LogoutButton from "../shared/LogoutButton";
+import PostsScreen from "../../src/screens/PostsScreen";
+import CreatePostScreen from "../../src/screens/CreatePostsScreen";
+import ProfileScreen from "../../src/screens/ProfileScreen";
+import { colors } from "../../styles/global";
+import LogoutButton from "../../src/shared/LogoutButton";
 
-import IconPostFocused from "../icons/IconPostFocesd";
-import IconPostNotFocused from "../icons/IconPostNotFocused";
+import IconPostFocused from "../../icons/IconPostFocesd";
+import IconPostNotFocused from "../../icons/IconPostNotFocused";
 
 const Tabs = createBottomTabNavigator();
 

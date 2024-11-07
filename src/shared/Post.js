@@ -17,7 +17,7 @@ const Post = () => {
       <View style={styles.image}>
         <Image
           style={styles.image}
-          source={require("../assets/images/forest.png")}
+          source={require("../../assets/images/forest.png")}
         ></Image>
       </View>
       <Text>Forest</Text>

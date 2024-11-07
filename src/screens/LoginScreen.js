@@ -10,16 +10,19 @@ import {
   Keyboard,
   Alert,
 } from "react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { colors } from "../styles/global";
-import Input from "../shared/Input";
-import Button from "../shared/Button";
-import BackgroundImageWrapper from "../shared/BackgroundWrapper";
+import { colors } from "../../styles/global";
+import Input from "../../src/shared/Input";
+import Button from "../../src/shared/Button";
+import BackgroundImageWrapper from "../../src/shared/BackgroundWrapper";
+import { useDispatch } from "react-redux";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("screen");
 
 const LoginScreen = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPassVisible, setIsPassVisible] = useState(false);
@@ -32,16 +35,35 @@ const LoginScreen = ({ navigation }) => {
     setPassword(value);
   };
 
-  const showPassword = () => {
-    setIsPassVisible((prev) => !prev);
+  const onSignIn = () => {
+    email && password
+      ? (dispatch(
+          loginDB({
+            inputEmail: email,
+            inputPassword: password,
+          })
+        ),
+        reset())
+      : Alert.alert("Input your credentials");
   };
 
-  const onLogin = () => {
-    navigation.navigate("Posts");
+  const reset = () => {
+    setEmail("");
+    setPassword("");
   };
 
   const onSignUp = () => {
     navigation.navigate("Register");
+  };
+  useEffect(() => {
+    if (login && email && password) {
+      console.log(login, email, password);
+      return;
+    }
+  }, [login, email, password]);
+
+  const showPassword = () => {
+    setIsPassVisible((prev) => !prev);
   };
 
   const showButton = (
@@ -76,7 +98,7 @@ const LoginScreen = ({ navigation }) => {
               />
             </View>
             <View style={styles.btnWrapper}>
-              <Button buttonStyle={styles.loginBtn} onPress={onLogin}>
+              <Button buttonStyle={styles.loginBtn} onPress={onSignIn}>
                 <Text style={[styles.baseText, styles.loginButtonText]}>
                   Login
                 </Text>

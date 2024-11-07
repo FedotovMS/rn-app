@@ -3,7 +3,7 @@ const { ImageBackground, StyleSheet } = require("react-native");
 const BackgroundImageWrapper = ({ children }) => {
   return (
     <ImageBackground
-      source={require("../assets/images/backgroundImg.png")}
+      source={require("../../assets/images/backgroundImg.png")}
       resizeMode="cover"
       style={styles.backgroundImg}
     >
